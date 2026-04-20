@@ -58,15 +58,18 @@
             padding: 40px 10%;
         }
 
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #fff, var(--silver), var(--neon-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
+  .hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    /* Usa clamp para definir um tamanho mínimo, um ideal e um máximo */
+    font-size: clamp(1.8rem, 8vw, 3.5rem); 
+    text-transform: uppercase;
+    background: linear-gradient(to right, #fff, var(--silver), var(--neon-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    word-wrap: break-word; /* Garante que a palavra quebre se for maior que a tela */
+}
 
         .hero p {
             font-size: 1.4rem;
