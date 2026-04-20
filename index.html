@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegas Vigilância | Central Command</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --deep-black: #050505;
+            --slate-gray: #1a1a1a;
+            --silver: #e0e0e0;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--deep-black);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Fundo com efeito de grade tecnológica */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: 
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 450px;
+            width: 100%;
+            filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.3));
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 10%;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, var(--silver), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--silver);
+            max-width: 900px;
+            margin: 0 auto;
+            letter-spacing: 2px;
+        }
+
+        /* --- Grid Futurista --- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            padding: 60px 8%;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            border-radius: 5px;
+            padding: 40px 30px;
+            position: relative;
+            transition: 0.4s;
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--neon-blue);
+        }
+
+        .card p {
+            color: #ccc;
+            font-size: 1.05rem;
+        }
+
+        /* --- O Card 6: Simulação de Monitor Real --- */
+        .monitor-card {
+            padding: 10px !important;
+            display: flex;
+            flex-direction: column;
+            background: #000 !important;
+            border: 2px solid #333 !important;
+        }
+
+        .cctv-screen {
+            width: 100%;
+            height: 180px;
+            background: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80');
+            background-size: cover;
+            border-radius: 3px;
+            position: relative;
+            border: 1px solid #444;
+        }
+
+        /* Efeito de Scanline e Texto de Monitor */
+        .cctv-screen::after {
+            content: "• REC 00:24:59\nCAM-06 CENTRAL";
+            position: absolute;
+            top: 10px; left: 10px;
+            color: #0f0;
+            font-family: monospace;
+            font-size: 10px;
+            white-space: pre;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        /* --- Explicações Detalhadas --- */
+        .details-section {
+            padding: 80px 10%;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .detail-box {
+            margin-bottom: 40px;
+            border-left: 3px solid var(--neon-blue);
+            padding-left: 30px;
+        }
+
+        .detail-box h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- CTA Futurista --- */
+        .cta-box {
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 20px 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-btn:hover {
+            background: var(--neon-blue);
+            color: #000;
+            box-shadow: 0 0 50px var(--neon-blue);
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            color: #444;
+            letter-spacing: 5px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="assets/logovegas.jpg" alt="Vegas Vigilância">
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Sincronize sua Defesa</h1>
+        <p>A segurança estática morreu. Bem-vindo à era da Vigilância Ativa e Resposta Cibernética.</p>
+    </section>
+
+    <section class="benefits-grid">
+        <div class="card">
+            <i class="fas fa-brain"></i>
+            <h3>Olhar Analítico</h3>
+            <p>Nossa central não apenas "vê", ela analisa comportamentos suspeitos antes da invasão ocorrer.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-microchip"></i>
+            <h3>Otimização de Hardware</h3>
+            <p>Ajustamos o bitrate e a sensibilidade dos seus sensores via nuvem para máxima performance.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-user-secret"></i>
+            <h3>Intervenção Invisível</h3>
+            <p>Em caso de pane, nossos técnicos acessam o sistema e corrigem falhas sem você notar.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-satellite"></i>
+            <h3>Conexão Global</h3>
+            <p>Seus olhos na central Vegas, onde quer que você esteja no mundo.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Blindagem de Dados</h3>
+            <p>Gravações seguras com protocolos militares de criptografia.</p>
+        </div>
+        <div class="card monitor-card">
+            <div class="cctv-screen"></div>
+            <h3 style="margin-top: 15px; text-align: center;">Live Feed Control</h3>
+            <p style="text-align: center; font-size: 0.8rem;">Monitoramento integrado 24/7</p>
+        </div>
+    </section>
+
+    <section class="details-section">
+        <div class="detail-box">
+            <h4>Por que conceder o acesso?</h4>
+            <p>Um sistema de câmeras isolado é apenas um gravador de crimes passados. Quando você concede acesso à <strong>Vegas Vigilância</strong>, seu sistema se torna uma arma preventiva. Nossa central utiliza sua infraestrutura para criar uma malha de proteção que identifica vulnerabilidades em tempo real, impedindo o crime antes que ele aconteça.</p>
+        </div>
+        <div class="detail-box">
+            <h4>Inteligência Tática Remota</h4>
+            <p>O acesso permite que nossa equipe realize o "Ronda Virtual". Ao invés de esperar um alarme tocar, nós patrulhamos visualmente suas câmeras em horários estratégicos, garantindo que portas, portões e perímetros estejam íntegros.</p>
+        </div>
+    </section>
+
+    <section class="cta-box">
+        <a href="https://wa.me/552431128979?text=Olá,%20Vegas%20Vigilância.%20Gostaria%20de%20autorizar%20o%20acesso%20técnico%20às%20minhas%20câmeras%20para%20aumentar%20minha%20segurança." class="whatsapp-btn">
+            Autorizar Acesso Técnico
+        </a>
+    </section>
+
+    <footer>
+        VEGAS VIGILÂNCIA // PROTOCOLO DE SEGURANÇA 2026
+    </footer>
+
+</body>
+</html>
